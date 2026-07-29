@@ -3,519 +3,392 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yasaman Saeidi — Economics, LSE</title>
-<meta name="description" content="Yasaman Saeidi, PhD candidate in Economics at the London School of Economics. Labour economics, economics of crime. Job market candidate 2026-27.">
+<title>Yasaman Saeidi | LSE</title>
+<meta name="description" content="Yasaman Saeidi, PhD candidate in Economics at the London School of Economics. Labour economics, economics of crime.">
 
-<!-- ==========================================================
-     THINGS TO CHECK OR ADD  (search for the marker in brackets)
+<!-- =========================================================
+     HOW THIS FILE WORKS
+     One file, three tabs. The tabs are the sections marked
+     <section class="page" id="home">, id="research", id="teaching".
+     Nothing to install; edit the text and commit.
 
-       [MARKET-YEAR]  I assumed 2026-27. Change or delete.
-       [SCHOLAR]      paste your Google Scholar URL
-       [CV]           upload CV.pdf to the repo root
-       [JMP-PDF]      upload your paper, then point the link at it
-       [ABSTRACT]     three papers need abstracts pasted in
-       [JPUBE-LINK]   link to the published Journal of Public Economics article
-     ========================================================== -->
+     STILL TO ADD (search for the marker):
+       [ABSTRACT]  two working papers have no abstract yet
+       [HAZE-LINK] currently points at the placeholder you gave me
+       [BBE-LINK]  Boom, Bust, Echo has no link yet
+     ========================================================= -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --paper:#f7f8f9;
-  --card:#ffffff;
-  --ink:#16181d;
-  --ink-soft:#454c57;
-  --muted:#767f8b;
-  --rule:#dfe2e6;
-  --accent:#8c2f39;
-  --accent-tint:#f4ebec;
-  --serif:"Source Serif 4",Georgia,serif;
-  --mono:"IBM Plex Mono",ui-monospace,monospace;
-  --rail:19rem;
-  --measure:41rem;
+  --bg:#ffffff;
+  --ink:#12161c;
+  --body:#333941;
+  --muted:#6d757e;
+  --rule:#e3e6ea;
+  --link:#14508c;
+  --wash:#f7f8fa;
+  --ui:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --prose:"Source Serif 4",Georgia,serif;
 }
-
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%}
 body{
   margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--serif);
-  font-size:17px;
-  line-height:1.65;
+  background:var(--bg);
+  color:var(--body);
+  font-family:var(--prose);
+  font-size:17.5px;
+  line-height:1.68;
   -webkit-font-smoothing:antialiased;
 }
-a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(140,47,57,.28)}
-a:hover{border-bottom-color:var(--accent)}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--link);outline-offset:2px;border-radius:2px}
 
-.shell{
-  max-width:71rem;
-  margin:0 auto;
-  padding:3.5rem 1.75rem 5rem;
-  display:grid;
-  grid-template-columns:var(--rail) minmax(0,1fr);
-  gap:4.5rem;
-  align-items:start;
+/* ---------- top bar ---------- */
+header{
+  border-bottom:1px solid var(--rule);
+  background:var(--bg);
+  position:sticky;top:0;z-index:20;
 }
+.bar{
+  max-width:54rem;margin:0 auto;
+  padding:0 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1.5rem;min-height:4rem;
+  flex-wrap:wrap;
+}
+.brand{
+  font-family:var(--ui);font-weight:600;font-size:1rem;
+  letter-spacing:-.01em;color:var(--ink);
+}
+.brand:hover{text-decoration:none;color:var(--link)}
+.tabs{display:flex;gap:.35rem;flex-wrap:wrap;font-family:var(--ui)}
+.tabs a{
+  font-size:.875rem;font-weight:500;color:var(--muted);
+  padding:.4rem .7rem;border-radius:4px;
+  transition:color .15s,background .15s;
+}
+.tabs a:hover{color:var(--ink);background:var(--wash);text-decoration:none}
+.tabs a.active{color:var(--ink);background:var(--wash)}
+.tabs a.out::after{content:" ↗";font-size:.72em;color:var(--muted)}
 
-/* ---------- left rail ---------- */
-.rail{position:sticky;top:3.5rem}
-.rail h1{
-  font-size:2rem;
-  font-weight:600;
-  line-height:1.12;
-  letter-spacing:-.02em;
-  margin:0 0 .7rem;
-}
-.affil{margin:0;color:var(--ink-soft);font-size:.98rem;line-height:1.5}
-.affil em{font-style:italic}
-.supervisors{
-  margin:.7rem 0 0;
-  font-size:.88rem;
-  color:var(--muted);
-  line-height:1.5;
-}
-.status{
-  margin:1.1rem 0 0;
-  font-family:var(--mono);
-  font-size:.7rem;
-  text-transform:uppercase;
-  letter-spacing:.13em;
-  color:var(--accent);
-}
-.rail hr{border:0;border-top:1px solid var(--rule);margin:1.6rem 0}
-.contact{list-style:none;margin:0;padding:0;font-size:.94rem}
-.contact li{margin-bottom:.45rem;color:var(--ink-soft)}
-.contact a{border-bottom:none;color:var(--ink-soft)}
-.contact a:hover{color:var(--accent)}
-.contact .addr{font-size:.85rem;color:var(--muted);line-height:1.45;margin-top:.9rem}
+/* ---------- layout ---------- */
+.wrap{max-width:54rem;margin:0 auto;padding:3rem 1.5rem 5rem}
+.page{display:none}
+.page.on{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-nav ol{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:.74rem}
-nav li{margin-bottom:.4rem}
-nav a{
-  border-bottom:none;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  display:block;
-  padding-left:.85rem;
-  border-left:2px solid transparent;
-  transition:color .18s,border-color .18s;
+h1.name{
+  font-family:var(--ui);font-size:2.1rem;font-weight:600;
+  letter-spacing:-.028em;color:var(--ink);
+  margin:0 0 .35rem;line-height:1.15;
 }
-nav a:hover{color:var(--ink)}
-nav a[aria-current="true"]{color:var(--accent);border-left-color:var(--accent)}
-
-/* ---------- sections ---------- */
-main{min-width:0}
-section{margin-bottom:3.75rem;scroll-margin-top:2.5rem}
-section > h2{
-  font-family:var(--mono);
-  font-size:.72rem;
-  font-weight:500;
-  text-transform:uppercase;
-  letter-spacing:.15em;
-  color:var(--muted);
-  margin:0 0 1.4rem;
-  padding-bottom:.7rem;
+.role{
+  font-family:var(--ui);font-size:1rem;color:var(--muted);
+  margin:0 0 1.6rem;font-weight:400;
+}
+h2.tabtitle{
+  font-family:var(--ui);font-size:1.6rem;font-weight:600;
+  letter-spacing:-.022em;color:var(--ink);margin:0 0 2rem;
+}
+h3.group{
+  font-family:var(--ui);font-size:.76rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;color:var(--muted);
+  margin:2.9rem 0 1.1rem;padding-bottom:.6rem;
   border-bottom:1px solid var(--rule);
 }
-main p{max-width:var(--measure)}
-.lede{font-size:1.12rem;line-height:1.6}
+h3.group:first-of-type{margin-top:0}
+p{margin:0 0 1.1rem}
+.prose p:last-child{margin-bottom:0}
 
-.fieldset{margin-top:1.7rem}
-.fieldset dt{
-  font-family:var(--mono);font-size:.68rem;
-  text-transform:uppercase;letter-spacing:.13em;
-  color:var(--muted);margin-bottom:.5rem;
+/* ---------- home ---------- */
+.linkrow{
+  font-family:var(--ui);font-size:.9rem;
+  margin:1.9rem 0 0;padding-top:1.4rem;
+  border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;gap:.55rem 1rem;
 }
-.fieldset dd{margin:0 0 1rem;display:flex;flex-wrap:wrap;gap:.45rem}
-.fieldset dd span{
-  font-family:var(--mono);font-size:.72rem;
-  letter-spacing:.05em;
-  color:var(--ink-soft);
+.jmbox{
+  background:var(--wash);
   border:1px solid var(--rule);
-  background:var(--card);
-  padding:.32rem .6rem;
+  border-radius:6px;
+  padding:1.15rem 1.3rem;
+  margin:2rem 0 0;
+  font-size:1rem;
 }
-
-/* ---------- job market paper ---------- */
-.jmp{
-  background:var(--card);
-  border:1px solid var(--rule);
-  border-left:3px solid var(--accent);
-  padding:2rem 2.1rem 1.7rem;
+.jmbox p{margin:0}
+.jmbox strong{color:var(--ink);font-weight:600}
+.fieldlines{
+  font-family:var(--ui);font-size:.92rem;
+  margin:1.9rem 0 0;
 }
-.jmp .eyebrow{
-  font-family:var(--mono);font-size:.68rem;font-weight:500;
-  text-transform:uppercase;letter-spacing:.16em;
-  color:var(--accent);
-  margin:0 0 .9rem;
+.fieldlines div{margin-bottom:.4rem}
+.fieldlines b{
+  color:var(--muted);font-weight:500;
+  display:inline-block;min-width:6.4rem;
 }
-.jmp h3{
-  font-size:1.5rem;line-height:1.25;font-weight:600;
-  letter-spacing:-.012em;
-  margin:0 0 1.1rem;max-width:32ch;
-}
-.jmp h3 a{color:var(--ink);border-bottom:1px solid var(--rule)}
-.jmp h3 a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.jmp .abstract{font-size:.98rem;color:var(--ink-soft);margin:0;max-width:var(--measure)}
+.fieldlines span{color:var(--ink)}
 
 /* ---------- papers ---------- */
-.paper{padding:1.5rem 0;border-bottom:1px solid var(--rule)}
-.paper:first-of-type{padding-top:.25rem}
-.paper:last-of-type{border-bottom:none}
-.paper h3{font-size:1.14rem;font-weight:600;line-height:1.35;margin:0 0 .3rem;max-width:40ch}
-.paper h3 a{color:var(--ink);border-bottom:1px solid var(--rule)}
-.paper h3 a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.coauthors{margin:0;font-size:.92rem;color:var(--muted);font-style:italic;max-width:var(--measure)}
-.venue{
+.item{padding:0 0 1.5rem;margin-bottom:1.5rem;border-bottom:1px solid var(--rule)}
+.item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.item h4{
+  font-family:var(--ui);font-size:1.06rem;font-weight:600;
+  line-height:1.4;color:var(--ink);margin:0 0 .3rem;
+}
+.item h4 a{color:var(--ink)}
+.item h4 a:hover{color:var(--link)}
+.with{margin:0;font-size:.95rem;color:var(--muted);font-style:italic}
+.where{
+  font-family:var(--ui);font-size:.86rem;color:var(--body);
   margin:.4rem 0 0;
-  font-family:var(--mono);font-size:.73rem;
-  letter-spacing:.04em;color:var(--ink-soft);
 }
-.venue .pub{color:var(--accent)}
-.abstract{font-size:.95rem;color:var(--ink-soft);line-height:1.62;margin:0}
-
-details.abs{margin-top:.6rem}
-details.abs summary{
-  font-family:var(--mono);font-size:.7rem;
-  text-transform:uppercase;letter-spacing:.1em;
+.where b{color:var(--link);font-weight:600;font-style:normal}
+.tag{
+  display:inline-block;
+  font-family:var(--ui);font-size:.68rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.09em;
+  color:#8a5a00;background:#fdf5e3;
+  border:1px solid #f0e0b8;border-radius:3px;
+  padding:.16rem .45rem;margin-bottom:.55rem;
+}
+.abstract{font-size:.98rem;margin:.75rem 0 0}
+details{margin:.6rem 0 0}
+summary{
+  font-family:var(--ui);font-size:.8rem;font-weight:500;
   color:var(--muted);cursor:pointer;list-style:none;
-  display:inline-block;padding:.15rem 0;
+  display:inline-block;
 }
-details.abs summary::-webkit-details-marker{display:none}
-details.abs summary::before{content:"+ ";color:var(--accent)}
-details.abs[open] summary::before{content:"\2013 ";color:var(--accent)}
-details.abs summary:hover{color:var(--ink)}
-details.abs .abstract{margin-top:.65rem;max-width:var(--measure)}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";color:var(--link)}
+details[open] summary::before{content:"▾ "}
+summary:hover{color:var(--ink)}
 
-/* ---------- lists: teaching, experience ---------- */
-.rows{list-style:none;margin:0;padding:0}
-.rows li{
-  display:flex;justify-content:space-between;gap:1.5rem;
-  padding:.68rem 0;border-bottom:1px solid var(--rule);
-  font-size:.97rem;
+/* ---------- teaching ---------- */
+.courses{list-style:none;margin:0;padding:0}
+.courses li{
+  padding:.6rem 0;border-bottom:1px solid var(--rule);
+  font-size:1rem;line-height:1.55;
 }
-.rows li:last-child{border-bottom:none}
-.rows .what{max-width:34rem}
-.rows .role{display:block;font-size:.87rem;color:var(--muted)}
-.rows .when{
-  font-family:var(--mono);font-size:.73rem;color:var(--muted);
-  white-space:nowrap;padding-top:.3rem;
-}
-.subhead{
-  font-family:var(--mono);font-size:.68rem;
-  text-transform:uppercase;letter-spacing:.13em;
-  color:var(--muted);margin:1.9rem 0 .6rem;
-}
-.subhead:first-child{margin-top:0}
-
-/* ---------- references ---------- */
-.refs{
-  list-style:none;margin:0;padding:0;
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));
-  gap:1.6rem 2rem;
-}
-.refs strong{display:block;font-weight:600}
-.refs span{font-size:.92rem;color:var(--muted);line-height:1.5;display:block}
+.courses li:last-child{border-bottom:none}
+.courses .yrs{font-family:var(--ui);font-size:.87rem;color:var(--muted)}
+.note{font-size:.95rem;color:var(--muted);margin:.9rem 0 0}
 
 footer{
   border-top:1px solid var(--rule);
-  padding-top:1.5rem;
-  font-family:var(--mono);font-size:.7rem;
-  color:var(--muted);letter-spacing:.04em;
+  margin-top:4rem;padding-top:1.4rem;
+  font-family:var(--ui);font-size:.8rem;color:var(--muted);
 }
 
-.reveal{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .55s ease}
-.reveal.in{opacity:1;transform:none}
-
-@media (max-width:820px){
-  .shell{grid-template-columns:1fr;gap:2.75rem;padding:2.5rem 1.35rem 4rem}
-  .rail{position:static}
-  .rail h1{font-size:1.75rem}
-  nav{display:none}
-  section{margin-bottom:3rem}
-  .jmp{padding:1.5rem 1.4rem 1.3rem}
-  .jmp h3{font-size:1.25rem}
-  .rows li{flex-direction:column;gap:.15rem}
-  .rows .when{padding-top:.1rem}
+@media (max-width:640px){
+  .wrap{padding:2.25rem 1.15rem 3.5rem}
+  .bar{padding:.7rem 1.15rem;min-height:0}
+  h1.name{font-size:1.75rem}
+  h2.tabtitle{font-size:1.35rem}
+  .tabs a{padding:.35rem .5rem}
 }
-
 @media (prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none;transition:none}
-  html{scroll-behavior:auto}
+  .page.on{animation:none}
 }
 </style>
 </head>
 <body>
 
-<div class="shell">
+<header>
+  <nav class="bar" aria-label="Main">
+    <a class="brand" href="#home">Yasaman Saeidi</a>
+    <div class="tabs">
+      <a href="#home" data-tab="home">Home</a>
+      <a href="#research" data-tab="research">Research</a>
+      <a href="#teaching" data-tab="teaching">Teaching</a>
+      <a class="out" href="https://drive.google.com/file/d/1kssEXV-vw8MVCcJRjRqfs6zI0kEMUl2z/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+    </div>
+  </nav>
+</header>
 
-  <!-- ============ LEFT RAIL ============ -->
-  <aside class="rail">
-    <h1>Yasaman Saeidi</h1>
-    <p class="affil">
-      PhD Candidate in Economics<br>
-      <em>London School of Economics</em>
-    </p>
-    <p class="supervisors">
-      Supervised by Prof. Stephen Machin<br>and Dr. Tom Kirchmaier
-    </p>
-    <!-- [MARKET-YEAR] -->
-    <p class="status">Job market candidate 2026–27</p>
+<div class="wrap">
 
-    <hr>
+  <!-- ================= HOME ================= -->
+  <section class="page on" id="home">
+    <h1 class="name">Yasaman Saeidi</h1>
+    <p class="role">PhD Candidate in Economics · London School of Economics</p>
 
-    <ul class="contact">
-      <li><a href="mailto:Y.Saeidi@lse.ac.uk">Y.Saeidi@lse.ac.uk</a></li>
-      <!-- [CV] first link you sent -->
-      <li><a href="https://drive.google.com/file/d/1kssEXV-vw8MVCcJRjRqfs6zI0kEMUl2z/view?usp=sharing" target="_blank" rel="noopener">Curriculum vitae (PDF)</a></li>
-      <li><a href="https://scholar.google.com/citations?user=p6ul3K0AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google&nbsp;Scholar</a></li>
-      <li class="addr">
-        Department of Economics<br>
-        32 Lincoln's Inn Fields<br>
-        London WC2A 3PH
-      </li>
-    </ul>
-
-    <hr>
-
-    <nav aria-label="Sections">
-      <ol>
-        <li><a href="#about">About</a></li>
-        <li><a href="#jmp">Job market paper</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#papers">Working papers</a></li>
-        <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#references">References</a></li>
-      </ol>
-    </nav>
-  </aside>
-
-  <!-- ============ CONTENT ============ -->
-  <main>
-
-    <section id="about" class="reveal">
-      <h2>About</h2>
-      <p class="lede">
-        I am a PhD candidate in Economics at the London School of Economics, where I
-        work with Stephen Machin and Tom Kirchmaier on the economics of crime and
-        labour markets.
+    <div class="prose">
+      <p>
+        I am a PhD candidate in Economics at the London School of Economics, supervised
+        by Stephen Machin and Tom Kirchmaier. My research is in labour economics and the
+        economics of crime.
       </p>
       <p>
-        My research asks how features of the built environment and the wider economy
-        shape criminal behaviour and victimisation. My job market paper studies what
-        happens to crime when a city builds new transport infrastructure, using
-        recorded crime data from Greater Manchester Police alongside the Crime Survey
-        of England and Wales. Related work examines the effect of the cost of living
-        crisis on offending, and the link between alcohol, football, and domestic
-        abuse.
+        I study how the built environment and wider economic conditions shape criminal
+        behaviour and victimisation. My job market paper asks what happens to crime when
+        a city builds new transport infrastructure, using recorded crime data from
+        Greater Manchester Police alongside the Crime Survey of England and Wales.
+        Related work examines the effect of the cost of living crisis on offending, and
+        the role of alcohol and football in domestic abuse.
       </p>
       <p>
         I work with administrative and survey microdata, and use machine learning and
-        satellite imagery where conventional data are unavailable — most recently on a
-        World Bank project measuring economic growth and climate indicators in Vietnam.
-        Before the PhD I read Electrical Engineering at Sharif University of
-        Technology.
+        satellite imagery where conventional data are unavailable. Before the PhD I read
+        Electrical Engineering at Sharif University of Technology.
       </p>
+    </div>
 
-      <dl class="fieldset">
-        <dt>Primary fields</dt>
-        <dd>
-          <span>Labour Economics</span>
-          <span>Economics of Crime</span>
-          <span>Economics of Education</span>
-        </dd>
-        <dt>Secondary field</dt>
-        <dd><span>Urban Economics</span></dd>
-      </dl>
-    </section>
+    <div class="fieldlines">
+      <div><b>Primary</b> <span>Labour Economics · Economics of Crime · Economics of Education</span></div>
+      <div><b>Secondary</b> <span>Urban Economics</span></div>
+    </div>
 
-    <section id="jmp" class="reveal">
-      <h2>Job market paper</h2>
-      <article class="jmp">
-        <p class="eyebrow">Job market paper</p>
-        <!-- [JMP-PDF] second link you sent -->
-        <h3><a href="https://drive.google.com/file/d/19m43oywbAiBJzWUJZE_zpnqctgHwDI1l/view?usp=sharing" target="_blank" rel="noopener">Transport Innovation and Crime</a></h3>
-        <p class="abstract">
-          This study assesses how newly built transport infrastructure influences the
-          temporal and spatial dynamics of crime, exploring underlying mechanisms. The
-          research also examines variations in effects across different crime types,
-          offenders' characteristics, and victimisation experience. Initially, the focus
-          is on the Manchester Metrolink, a comprehensive tram system in Greater
-          Manchester, England, using data from the Greater Manchester Police on recorded
-          crimes. The study then extends to all areas in England and Wales with newly
-          established tram networks, incorporating the Crime Survey of England and Wales
-          to assess citizens' crime reporting and victimisation. This analysis offers
-          critical insights into the relationship between transport innovation and
-          crime, contributing to urban planning and policy decisions.
-        </p>
-      </article>
-    </section>
+    <div class="jmbox">
+      <p>
+        <strong>I am on the 2026–27 job market.</strong> My job market paper,
+        <a href="https://drive.google.com/file/d/19m43oywbAiBJzWUJZE_zpnqctgHwDI1l/view?usp=sharing" target="_blank" rel="noopener">Transport Innovation and Crime</a>,
+        and my <a href="https://drive.google.com/file/d/1kssEXV-vw8MVCcJRjRqfs6zI0kEMUl2z/view?usp=sharing" target="_blank" rel="noopener">CV</a> are available here.
+      </p>
+    </div>
 
-    <section id="publications" class="reveal">
-      <h2>Publications</h2>
-      <article class="paper">
-        <h3><a href="https://doi.org/10.1016/j.jpubeco.2023.105031" target="_blank" rel="noopener">Football, Alcohol, and Domestic Abuse</a></h3>
-        <p class="coauthors">with Ria Ivandić, Tom Kirchmaier and Neus Torres-Blas</p>
-        <p class="venue"><span class="pub">Journal of Public Economics</span> &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; vol. 230</p>
-      </article>
-    </section>
+    <div class="linkrow">
+      <a href="mailto:Y.Saeidi@lse.ac.uk">Y.Saeidi@lse.ac.uk</a>
+      <a href="https://drive.google.com/file/d/1kssEXV-vw8MVCcJRjRqfs6zI0kEMUl2z/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+      <a href="https://scholar.google.com/citations?user=p6ul3K0AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <span style="color:var(--muted)">Department of Economics, 32 Lincoln's Inn Fields, London WC2A 3PH</span>
+    </div>
+  </section>
 
-    <section id="papers" class="reveal">
-      <h2>Working papers</h2>
+  <!-- ================= RESEARCH ================= -->
+  <section class="page" id="research">
+    <h2 class="tabtitle">Research</h2>
 
-      <article class="paper">
-        <h3><a href="#">Boom, Bust, Echo: Effect of the Cost of Living Crisis on Crime</a></h3>
-        <p class="coauthors">with Magdalena Dominguez and Tom Kirchmaier</p>
-        <!-- [ABSTRACT] paste the abstract between the <p> tags below, then delete this line -->
-        <details class="abs">
-          <summary>Abstract</summary>
-          <p class="abstract">
-            Add the abstract here.
-          </p>
-        </details>
-      </article>
+    <h3 class="group">Job Market Paper</h3>
+    <div class="item">
+      <span class="tag">Job market paper</span>
+      <h4><a href="https://drive.google.com/file/d/19m43oywbAiBJzWUJZE_zpnqctgHwDI1l/view?usp=sharing" target="_blank" rel="noopener">Transport Innovation and Crime</a></h4>
+      <p class="abstract">
+        This study assesses how newly built transport infrastructure influences the
+        temporal and spatial dynamics of crime, exploring underlying mechanisms. The
+        research also examines variations in effects across different crime types,
+        offenders' characteristics, and victimisation experience. Initially, the focus is
+        on the Manchester Metrolink, a comprehensive tram system in Greater Manchester,
+        England, using data from the Greater Manchester Police on recorded crimes. The
+        study then extends to all areas in England and Wales with newly established tram
+        networks, incorporating the Crime Survey of England and Wales to assess citizens'
+        crime reporting and victimisation. This analysis offers critical insights into the
+        relationship between transport innovation and crime, contributing to urban
+        planning and policy decisions.
+      </p>
+    </div>
 
-      <article class="paper">
-        <h3><a href="#">The Impact of Transboundary Haze on Agricultural Productivity in Southeast Asia</a></h3>
-        <p class="coauthors">with Yohan Iddawela and Son Le</p>
-        <!-- [ABSTRACT] -->
-        <details class="abs">
-          <summary>Abstract</summary>
-          <p class="abstract">
-            Add the abstract here.
-          </p>
-        </details>
-      </article>
-    </section>
+    <h3 class="group">Working Papers</h3>
 
-    <section id="teaching" class="reveal">
-      <h2>Teaching</h2>
-      <p class="subhead">London School of Economics</p>
-      <ul class="rows">
-        <li>
-          <span class="what">EC411 Microeconomics for MSc Students<span class="role">Graduate teaching assistant</span></span>
-          <span class="when">2024–25</span>
-        </li>
-        <li>
-          <span class="what">MY474/574 Applied Machine Learning for Social Science<span class="role">Graduate teaching assistant</span></span>
-          <span class="when">2024</span>
-        </li>
-        <li>
-          <span class="what">EC400 Mathematics and Statistics (Introductory)<span class="role">Graduate teaching assistant</span></span>
-          <span class="when">Summer 2023, 2024</span>
-        </li>
-        <li>
-          <span class="what">EC317 Labour Economics<span class="role">Graduate teaching assistant</span></span>
-          <span class="when">2022–23</span>
-        </li>
-        <li>
-          <span class="what">EC201 Microeconomic Principles I<span class="role">Graduate teaching assistant</span></span>
-          <span class="when">2021–22</span>
-        </li>
-        <li>
-          <span class="what">EC100 Economics A<span class="role">Graduate teaching assistant</span></span>
-          <span class="when">2020–21</span>
-        </li>
-      </ul>
+    <div class="item">
+      <!-- [BBE-LINK] add a URL inside the quotes of href when you have one -->
+      <h4>Boom, Bust, Echo: Effect of the Cost of Living Crisis on Crime</h4>
+      <p class="with">with Magdalena Dominguez and Tom Kirchmaier</p>
+      <!-- [ABSTRACT] -->
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Add the abstract here.</p>
+      </details>
+    </div>
 
-      <p class="subhead">Sharif Graduate School of Management and Economics</p>
-      <ul class="rows">
-        <li>
-          <span class="what">Microeconomics A<span class="role">Teaching assistant</span></span>
-          <span class="when">2018</span>
-        </li>
-        <li>
-          <span class="what">Principles of Economics<span class="role">Teaching assistant</span></span>
-          <span class="when">2017</span>
-        </li>
-      </ul>
-    </section>
+    <h3 class="group">Publications</h3>
 
-    <section id="experience" class="reveal">
-      <h2>Research experience</h2>
-      <ul class="rows">
-        <li>
-          <span class="what">World Bank / 505 Economics<span class="role">Research intern, Green Economy Diagnostic Project — satellite imagery and machine learning to measure growth and climate indicators in Vietnam</span></span>
-          <span class="when">2022–23</span>
-        </li>
-        <li>
-          <span class="what">Centre for Economic Performance, LSE<span class="role">Research assistant, Step Together evaluation (Youth Endowment Fund)</span></span>
-          <span class="when">2022–24</span>
-        </li>
-        <li>
-          <span class="what">Centre for Economic Performance, LSE<span class="role">Research assistant to Dr. Shqiponja Telhaj</span></span>
-          <span class="when">Summer 2020</span>
-        </li>
-      </ul>
-    </section>
+    <div class="item">
+      <h4><a href="https://doi.org/10.1016/j.jpubeco.2023.105031" target="_blank" rel="noopener">Football, Alcohol, and Domestic Abuse</a></h4>
+      <p class="with">with Ria Ivandić, Tom Kirchmaier and Neus Torres-Blas</p>
+      <p class="where"><b>Journal of Public Economics</b>, 2024, vol. 230</p>
+    </div>
 
-    <section id="references" class="reveal">
-      <h2>References</h2>
-      <ul class="refs">
-        <li>
-          <strong>Prof. Stephen Machin</strong>
-          <span>
-            Professor of Economics<br>
-            London School of Economics<br>
-            <a href="mailto:s.j.machin@lse.ac.uk">s.j.machin@lse.ac.uk</a>
-          </span>
-        </li>
-        <li>
-          <strong>Dr. Tom Kirchmaier</strong>
-          <span>
-            Associate Professor<br>
-            London School of Economics<br>
-            <a href="mailto:t.kirchmaier@lse.ac.uk">t.kirchmaier@lse.ac.uk</a>
-          </span>
-        </li>
-      </ul>
-    </section>
+    <h3 class="group">Policy Articles</h3>
 
-    <footer>
-      Yasaman Saeidi · London School of Economics · Updated July 2026
-    </footer>
+    <div class="item">
+      <h4><a href="https://youthendowmentfund.org.uk/wp-content/uploads/2025/01/YEF-Step-Together-Pilot-Jan-2025.pdf" target="_blank" rel="noopener">Step Together Pilot Report</a></h4>
+      <p class="with">Tom Kirchmaier, assisted by Shubhangi Agrawal, Julia Friedberg, Yasaman Saeidi and Ricky Wang</p>
+      <p class="where">Youth Endowment Fund, January 2025</p>
+      <p class="abstract">
+        An evaluation of the Step Together pilot, which placed trained adult chaperones on
+        routes used by children walking to and from school across the West Midlands. The
+        study assesses whether a robust quantitative evaluation of the programme is
+        feasible, using police administrative data and the National Pupil Database to
+        examine crime, antisocial behaviour, school attendance and attainment.
+      </p>
+    </div>
 
-  </main>
+    <div class="item">
+      <!-- [HAZE-LINK] replace the href below with the real PDF when you have one -->
+      <h4><a href="https://yasamansaeidi.github.io/#">The Impact of Transboundary Haze on Agricultural Productivity in Southeast Asia</a></h4>
+      <p class="with">with Yohan Iddawela and Son Le</p>
+      <p class="where">Prepared for the Green Economy Diagnostic Project, World Bank / 505 Economics</p>
+      <!-- [ABSTRACT] -->
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Add the abstract here.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= TEACHING ================= -->
+  <section class="page" id="teaching">
+    <h2 class="tabtitle">Teaching</h2>
+
+    <h3 class="group">London School of Economics</h3>
+    <ul class="courses">
+      <li>Microeconomics for MSc Students <span class="yrs">(2024, 2025)</span></li>
+      <li>Applied Machine Learning for Social Science <span class="yrs">(2024)</span></li>
+      <li>Introductory Courses in Mathematics for Microeconomics and Macroeconomics for MSc and MRes students <span class="yrs">(2023, 2024, 2026)</span></li>
+      <li>Labour Economics <span class="yrs">(2022, 2023)</span></li>
+      <li>Microeconomic Principles I <span class="yrs">(2021, 2022)</span></li>
+      <li>Economics A <span class="yrs">(2020, 2021)</span></li>
+    </ul>
+    <p class="note">Graduate teaching assistant. Course evaluations available on request.</p>
+
+    <h3 class="group">Sharif Graduate School of Management and Economics</h3>
+    <ul class="courses">
+      <li>Microeconomics A <span class="yrs">(2018)</span></li>
+      <li>Principles of Economics <span class="yrs">(2017)</span></li>
+    </ul>
+    <p class="note">Teaching assistant.</p>
+  </section>
+
+  <footer>
+    Yasaman Saeidi · London School of Economics · <a href="mailto:Y.Saeidi@lse.ac.uk">Y.Saeidi@lse.ac.uk</a>
+  </footer>
 </div>
 
 <script>
 (function () {
-  var items = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window) ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    items.forEach(function (el) { el.classList.add('in'); });
-    return;
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
-  items.forEach(function (el) { io.observe(el); });
-})();
+  var pages = document.querySelectorAll('.page');
+  var tabs  = document.querySelectorAll('.tabs a[data-tab]');
 
-(function () {
-  var links = Array.prototype.slice.call(document.querySelectorAll('nav a'));
-  if (!links.length || !('IntersectionObserver' in window)) return;
-  var byId = {};
-  links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        links.forEach(function (a) { a.removeAttribute('aria-current'); });
-        var a = byId[e.target.id];
-        if (a) a.setAttribute('aria-current', 'true');
-      }
+  function show(id) {
+    var found = false;
+    pages.forEach(function (p) {
+      var on = (p.id === id);
+      p.classList.toggle('on', on);
+      if (on) found = true;
     });
-  }, { rootMargin: '-15% 0px -70% 0px' });
-  document.querySelectorAll('main section[id]').forEach(function (s) { io.observe(s); });
+    if (!found) { show('home'); return; }
+    tabs.forEach(function (t) {
+      t.classList.toggle('active', t.dataset.tab === id);
+    });
+    document.title = (id === 'home')
+      ? 'Yasaman Saeidi | LSE'
+      : id.charAt(0).toUpperCase() + id.slice(1) + ' | Yasaman Saeidi';
+  }
+
+  function fromHash() {
+    var h = (location.hash || '#home').slice(1);
+    show(h);
+    window.scrollTo(0, 0);
+  }
+
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
 })();
 </script>
 
