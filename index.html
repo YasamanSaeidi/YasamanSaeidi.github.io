@@ -117,7 +117,7 @@ p{margin:0 0 1.1rem}
 /* ---------- home: photo + intro ---------- */
 .intro{
   display:flex;
-  align-items:flex-start;
+  align-items:center;      /* photo sits at the vertical middle */
   gap:2.4rem;
 }
 .intro-text{flex:1 1 auto;min-width:0}
@@ -221,7 +221,7 @@ footer{
   h1.name{font-size:1.75rem}
   h2.tabtitle{font-size:1.35rem}
   .tabs a{padding:.35rem .5rem}
-  .intro{flex-direction:column;gap:1.35rem}
+  .intro{flex-direction:column;align-items:flex-start;gap:1.35rem}
   .portrait{width:118px;height:118px}
   .prose p{text-align:left;hyphens:none;-webkit-hyphens:none}
 }
@@ -387,8 +387,8 @@ footer{
 
     <h3 class="group">Sharif Graduate School of Management and Economics</h3>
     <ul class="courses">
-      <li>Microeconomics A <span class="yrs">(2018)</span></li>
-      <li>Principles of Economics <span class="yrs">(2017)</span></li>
+      <li>Microeconomics A <span class="prog">Undergraduate</span> <span class="yrs">(2018)</span></li>
+      <li>Principles of Economics <span class="prog">Undergraduate</span> <span class="yrs">(2017)</span></li>
     </ul>
     <p class="note">Teaching assistant.</p>
   </section>
