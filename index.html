@@ -108,6 +108,10 @@ h3.group{
 }
 h3.group:first-of-type{margin-top:0}
 p{margin:0 0 1.1rem}
+.prose p{
+  text-align:justify;
+  hyphens:auto;-webkit-hyphens:auto;   /* stops big word gaps */
+}
 .prose p:last-child{margin-bottom:0}
 
 /* ---------- home: photo + intro ---------- */
@@ -119,7 +123,6 @@ p{margin:0 0 1.1rem}
 .intro-text{flex:1 1 auto;min-width:0}
 .portrait{
   flex:0 0 auto;
-  order:2;                 /* sits to the right of the text */
   width:190px;height:190px;
   object-fit:cover;
   border-radius:4px;
@@ -217,7 +220,8 @@ footer{
   h2.tabtitle{font-size:1.35rem}
   .tabs a{padding:.35rem .5rem}
   .intro{flex-direction:column;gap:1.35rem}
-  .portrait{order:-1;width:118px;height:118px}
+  .portrait{width:118px;height:118px}
+  .prose p{text-align:left;hyphens:none;-webkit-hyphens:none}
 }
 @media (prefers-reduced-motion:reduce){
   .page.on{animation:none}
