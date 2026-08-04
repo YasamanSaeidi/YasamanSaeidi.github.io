@@ -12,6 +12,10 @@
      <section class="page" id="home">, id="research", id="teaching".
      Nothing to install; edit the text and commit.
 
+     PHOTO: the file yasaman-saeidi.jpg must sit in the same
+     folder as this index.html. If you rename the image, change
+     the src="..." in the <img class="portrait"> tag to match.
+
      STILL TO ADD (search for the marker):
        [ABSTRACT]  two working papers have no abstract yet
        [HAZE-LINK] currently points at the placeholder you gave me
@@ -106,6 +110,23 @@ h3.group:first-of-type{margin-top:0}
 p{margin:0 0 1.1rem}
 .prose p:last-child{margin-bottom:0}
 
+/* ---------- home: photo + intro ---------- */
+.intro{
+  display:flex;
+  align-items:flex-start;
+  gap:2.4rem;
+}
+.intro-text{flex:1 1 auto;min-width:0}
+.portrait{
+  flex:0 0 auto;
+  order:2;                 /* sits to the right of the text */
+  width:190px;height:190px;
+  object-fit:cover;
+  border-radius:4px;
+  border:1px solid var(--rule);
+  display:block;
+}
+
 /* ---------- home ---------- */
 .linkrow{
   font-family:var(--ui);font-size:.9rem;
@@ -185,12 +206,18 @@ footer{
   font-family:var(--ui);font-size:.8rem;color:var(--muted);
 }
 
+@media (max-width:760px){
+  .intro{gap:1.9rem}
+  .portrait{width:150px;height:150px}
+}
 @media (max-width:640px){
   .wrap{padding:2.25rem 1.15rem 3.5rem}
   .bar{padding:.7rem 1.15rem;min-height:0}
   h1.name{font-size:1.75rem}
   h2.tabtitle{font-size:1.35rem}
   .tabs a{padding:.35rem .5rem}
+  .intro{flex-direction:column;gap:1.35rem}
+  .portrait{order:-1;width:118px;height:118px}
 }
 @media (prefers-reduced-motion:reduce){
   .page.on{animation:none}
@@ -215,24 +242,32 @@ footer{
 
   <!-- ================= HOME ================= -->
   <section class="page on" id="home">
-    <h1 class="name">Yasaman Saeidi</h1>
-    <p class="role">PhD Candidate in Economics · London School of Economics</p>
 
-    <div class="prose">
-      <p>
-        I am a PhD candidate in Economics at the London School of Economics, supervised
-        by Stephen Machin and Tom Kirchmaier. My research is in labour economics and the
-        economics of crime.
-      </p>
-      <p>
-        I study how the built environment and wider economic conditions shape criminal
-        behaviour and victimisation. My job market paper asks what happens to crime when
-        a city builds new transport infrastructure, using recorded crime data from
-        Greater Manchester Police alongside the Crime Survey of England and Wales.
-        Related work examines the effect of the cost of living crisis on offending, and
-        the role of alcohol and football in domestic abuse.
-      </p>
-     
+    <div class="intro">
+      <!-- PHOTO: keep this file next to index.html -->
+      <img class="portrait" src="yasaman-saeidi.jpg" width="640" height="640"
+           alt="Yasaman Saeidi">
+
+      <div class="intro-text">
+        <h1 class="name">Yasaman Saeidi</h1>
+        <p class="role">PhD Candidate in Economics · London School of Economics</p>
+
+        <div class="prose">
+          <p>
+            I am a PhD candidate in Economics at the London School of Economics, supervised
+            by Stephen Machin and Tom Kirchmaier. My research is in labour economics and the
+            economics of crime.
+          </p>
+          <p>
+            I study how the built environment and wider economic conditions shape criminal
+            behaviour and victimisation. My job market paper asks what happens to crime when
+            a city builds new transport infrastructure, using recorded crime data from
+            Greater Manchester Police alongside the Crime Survey of England and Wales.
+            Related work examines the effect of the cost of living crisis on offending, and
+            the role of alcohol and football in domestic abuse.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="fieldlines">
