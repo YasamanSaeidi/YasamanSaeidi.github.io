@@ -17,6 +17,10 @@
      folder as this index.html. If you rename the image, change
      the src="..." in the <img class="portrait"> tag to match.
 
+     HIDING TEXT: an HTML comment needs BOTH of its markers, the
+     opening one and the closing one. If you delete only one of the
+     two, everything between them appears on the page instead.
+
      HIDDEN ABSTRACTS: Boom Bust Echo and the haze paper each have
      an abstract block commented out. Search for ABSTRACT HIDDEN
      to find them; paste the text in and remove the comment markers.
@@ -186,6 +190,10 @@ p{margin:0 0 1.1rem}
   padding:.16rem .45rem;margin-bottom:.55rem;
 }
 .abstract{font-size:.98rem;margin:.75rem 0 0}
+.status{
+  font-family:var(--ui);font-size:.86rem;color:var(--muted);
+  margin:.4rem 0 0;
+}
 details{margin:.6rem 0 0}
 summary{
   font-family:var(--ui);font-size:.8rem;font-weight:500;
@@ -287,9 +295,10 @@ footer{
 
     <div class="jmbox">
       <p>
-        <!-- Commented out 21 Sep 2026 while the Nuffield application is live.
-             Uncomment if you do go on the market this cycle.
-        <strong>I am on the 2026–27 job market.</strong>
+        <!-- HIDDEN 21 Sep 2026 while the Nuffield application is live. To show the
+             job market sentence again, delete this whole comment: the marker on
+             the line above the sentence AND the closing marker below it.
+        <strong>I am on the 2026-27 job market.</strong>
         -->
         My job market paper,
         <a href="https://drive.google.com/file/d/19m43oywbAiBJzWUJZE_zpnqctgHwDI1l/view?usp=sharing" target="_blank" rel="noopener">Transport and Local Crime Dynamics</a>,
@@ -354,12 +363,24 @@ the openings.
       -->
     </div>
 
+    <h3 class="group">Work in Progress</h3>
+
+    <div class="item">
+      <h4>The Determinants of Hate Crime Offending</h4>
+      <p class="with">with Stephen Machin, Shqiponja Telhaj and Ria Ivandić</p>
+      <p class="status">Currently in the data gathering stage.</p>
+    </div>
+
+    <div class="item">
+      <h4>Transport and Victimisations</h4>
+      <p class="status">Using the Crime Survey for England and Wales.</p>
+    </div>
 
     <h3 class="group">Policy Articles</h3>
 
     <div class="item">
       <h4><a href="https://youthendowmentfund.org.uk/wp-content/uploads/2025/01/YEF-Step-Together-Pilot-Jan-2025.pdf" target="_blank" rel="noopener">Step Together Pilot Report</a></h4>
-      <p class="with">Tom Kirchmaier, assisted by Shubhangi Agrawal, Julia Friedberg, Yasaman Saeidi and Ricky Wang</p>
+      <p class="with">with Tom Kirchmaier, Shubhangi Agrawal, Julia Friedberg and Ricky Wang</p>
       <p class="where">Youth Endowment Fund, January 2025</p>
       <p class="abstract">
         An evaluation of the Step Together pilot, which placed trained adult chaperones on
@@ -374,7 +395,7 @@ the openings.
       <!-- [HAZE-LINK] replace the href below with the real PDF when you have one -->
       <h4><a href="https://yasamansaeidi.github.io/#">The Impact of Transboundary Haze on Agricultural Productivity in Southeast Asia</a></h4>
       <p class="with">with Yohan Iddawela and Son Le</p>
-      <p class="where">Prepared for the Green Economy Diagnostic Project, World Bank / 505 Economics</p>
+      <p class="where">Prepared for the Green Economy Diagnostic Project, World Bank / 505 Economics, 2023</p>
       <!-- ABSTRACT HIDDEN. To show it again, paste the abstract in place of the
            placeholder line, then delete the first line of this comment and the
            closing marker on the last line.
