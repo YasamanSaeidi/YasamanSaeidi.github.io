@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yasaman Saeidi | LSE</title>
-<meta name="description" content="Yasaman Saeidi, PhD candidate in Economics at the London School of Economics. Labour economics, economics of crime.">
+<meta name="description" content="Yasaman Saeidi, PhD candidate in Economics at the London School of Economics.">
 <link rel="canonical" href="https://yasamansaeidi.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%2314508c'/%3E%3Ctext%20x='16'%20y='22'%20text-anchor='middle'%20font-family='Georgia'%20font-size='15'%20fill='%23ffffff'%3EYS%3C/text%3E%3C/svg%3E">
 
 <!-- =========================================================
      HOW THIS FILE WORKS
@@ -26,7 +27,6 @@
      to find them; paste the text in and remove the comment markers.
 
      STILL TO ADD (search for the marker):
-       [HAZE-LINK] currently points at the placeholder you gave me
        [BBE-LINK]  Boom, Bust, Echo has no link yet
      ========================================================= -->
 
@@ -122,6 +122,19 @@ p{margin:0 0 1.1rem}
 }
 .prose p:last-child{margin-bottom:0}
 
+/* readable line length: caps long prose only, not headings or lists */
+.prose p,
+.abstract,
+.note{max-width:38rem}
+
+/* inline links need more than colour to be visible */
+.prose a,
+.jmbox a{
+  text-decoration:underline;
+  text-underline-offset:2px;
+  text-decoration-thickness:1px;
+}
+
 /* ---------- home: photo + intro ---------- */
 .intro{
   display:flex;
@@ -195,7 +208,7 @@ p{margin:0 0 1.1rem}
   margin:.55rem 0 0;
   display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .6rem;
 }
-.paperlinks .sep{color:var(--rule)}
+.paperlinks .sep{color:var(--muted)}
 .status{
   font-family:var(--ui);font-size:.86rem;color:var(--muted);
   margin:.4rem 0 0;
@@ -279,8 +292,9 @@ footer{
         <div class="prose">
           <p>
             I am a PhD candidate in Economics at the London School of Economics, supervised
-            by Stephen Machin and Tom Kirchmaier. My research is in labour economics and the
-            economics of crime.
+            by Stephen Machin and Tom Kirchmaier. My research is in labour economics, the
+            economics of crime and the economics of education, with urban economics as my
+            secondary field.
           </p>
           <p>
             I study how the built environment and wider economic conditions shape criminal
@@ -323,7 +337,7 @@ footer{
     <h3 class="group">Job Market Paper</h3>
     <div class="item">
       <span class="tag">Job market paper</span>
-      <h4><a href="https://drive.google.com/file/d/19m43oywbAiBJzWUJZE_zpnqctgHwDI1l/view?usp=sharing" target="_blank" rel="noopener">Transport and local crime dynamics</a></h4>
+      <h4><a href="https://drive.google.com/file/d/19m43oywbAiBJzWUJZE_zpnqctgHwDI1l/view?usp=sharing" target="_blank" rel="noopener">Transport and Local Crime Dynamics</a></h4>
       <p class="paperlinks">
         <a href="https://drive.google.com/file/d/19m43oywbAiBJzWUJZE_zpnqctgHwDI1l/view?usp=sharing" target="_blank" rel="noopener">Paper (PDF)</a>
         <span class="sep">|</span>
@@ -379,7 +393,7 @@ the openings.
     </div>
 
     <div class="item">
-      <h4>Transport and Victimisations</h4>
+      <h4>Transport and Victimisation</h4>
       <p class="status">Using the Crime Survey for England and Wales.</p>
     </div>
 
@@ -399,8 +413,8 @@ the openings.
     </div>
 
     <div class="item">
-      <!-- [HAZE-LINK] replace the href below with the real PDF when you have one -->
-      <h4><a href="https://yasamansaeidi.github.io/#">The Impact of Transboundary Haze on Agricultural Productivity in Southeast Asia</a></h4>
+      <!-- No public PDF yet. To add one later, wrap the title in a link. -->
+      <h4>The Impact of Transboundary Haze on Agricultural Productivity in Southeast Asia</h4>
       <p class="with">with Yohan Iddawela and Son Le</p>
       <p class="where">Prepared for the Green Economy Diagnostic Project, World Bank / 505 Economics, 2023</p>
       <!-- ABSTRACT HIDDEN. To show it again, paste the abstract in place of the
